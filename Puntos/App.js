@@ -10,8 +10,8 @@ import Panel from './components/Panel';
 export default function App() {
   return (
     <View style={styles.container}>
-      <MiModal></MiModal>
-      <MiMap></MiMap>
+      <MiModal />
+      <MiMap />
       <Panel></Panel>
     </View>
   );
