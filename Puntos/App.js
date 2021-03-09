@@ -8,10 +8,15 @@ import Panel from './components/Panel';
 
 
 export default function App() {
+
+  const handleLongPress = ({nativeEvent}) => {
+    console.log(nativeEvent);
+  }
+
   return (
     <View style={styles.container}>
       <MiModal />
-      <MiMap />
+      <MiMap onLongPress={handleLongPress} />
       <Panel></Panel>
     </View>
   );

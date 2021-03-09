@@ -7,7 +7,7 @@ export default function MiModal () {
         <Modal
             animationType="slide"
             transparent={true}
-            visible={true}
+            visible={false}
         >
             <View style={styles.modal}>
                 <View style={styles.content}>

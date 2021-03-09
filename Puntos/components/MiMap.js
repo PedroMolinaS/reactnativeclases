@@ -2,9 +2,13 @@ import React from 'react';
 import MapView from 'react-native-maps';
 import { StyleSheet, Dimensions} from 'react-native';
 
-export default function MiMap () {
+export default function MiMap ({onLongPress}) {
+
     return (
-        <MapView style={styles.mapa} />
+        <MapView 
+            style={styles.mapa} 
+            onLongPress = {onLongPress}
+        />
     )
 }
 
