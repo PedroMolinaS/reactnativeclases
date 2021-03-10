@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { Children } from 'react';
 import { StyleSheet, Text, View, Modal } from 'react-native';
 
 
-export default function MiModal () {
+export default function MiModal ({children, visible}) {
     return (
         <Modal
             animationType="slide"
             transparent={true}
-            visible={false}
+            visible={visible}
         >
             <View style={styles.modal}>
                 <View style={styles.content}>
-                    <Text>Soy un Modal</Text>
+                    {children}
                 </View>
             </View>
         </Modal>
