@@ -1,14 +1,25 @@
 import React from 'react';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 import { StyleSheet, Dimensions} from 'react-native';
 
-export default function MiMap ({onLongPress}) {
+export default function MiMap ({onLongPress, puntos}) {
 
     return (
         <MapView 
             style={styles.mapa} 
             onLongPress = {onLongPress}
-        />
+        >
+            {
+                puntos.map((objPunto)=>{
+                    return(
+                        <Marker 
+                        key={objPunto.name} 
+                        coordinate={objPunto.coordinate}
+                        title={objPunto.name} />
+                    )
+                })
+            }
+        </MapView>
     )
 }
 
