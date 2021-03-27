@@ -13,6 +13,7 @@ export default function App() {
   const [nombre, setNombre] = useState("");
   const [visible, setVisible] = useState(false);
   const [visibilityFilter, setVisibilityFilter] = useState("new_punto") // new_punto, all_puntos
+  const [pointsFilter,setPointsFilter] = useState(true)
 
   const handleLongPress = ({ nativeEvent }) => {
     // let newPuntos = puntos.concat({ coordinate: nativeEvent.coordinate })
@@ -43,10 +44,15 @@ export default function App() {
     setVisible(false)
   }
 
+  const handlePuntos = () => {
+    setPointsFilter(!pointsFilter)
+
+  }
+
   return (
     <View style={styles.container}>
-      <MiMap onLongPress={handleLongPress} puntos={puntos} />
-      <Panel handleLista={handleLista} textLista={"Lista"} />
+      <MiMap onLongPress={handleLongPress} puntos={puntos} pointsFilter={pointsFilter} />
+      <Panel handleLista={handleLista} textLista={"Lista"} handlePuntos={handlePuntos} />
       <MiModal visible={visible}>
         {
           visibilityFilter === "new_punto" ?

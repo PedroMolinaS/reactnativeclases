@@ -1,21 +1,28 @@
 import React from 'react';
-import { StyleSheet, Dimensions, Button, View} from 'react-native';
+import { StyleSheet, Dimensions, Button, View } from 'react-native';
 
-export default function Panel ({handleLista, textLista}) {
+export default function Panel({ handleLista, textLista, handlePuntos }) {
     return (
         <View style={styles.botones}>
-            <Button title={textLista} onPress={handleLista} />
-            <Button title="Mostrar/Ocultar" />
+            <View style={styles.boton}>
+                <Button  title={textLista} onPress={handleLista} />
+            </View>
+            <View>
+                <Button title="Mostrar/Ocultar" onPress={handlePuntos} />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     botones: {
-        flex:1,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent: 'center',    
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
         // backgroundColor: '#eee',
+    },
+    boton: {
+        marginRight: 10,
     }
 })
