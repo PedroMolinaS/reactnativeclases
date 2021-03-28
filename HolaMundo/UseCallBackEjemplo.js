@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function App() {
+export default function UseCallBackEjemplo() {
 
   const [cont, setCont] = useState(0)
 
